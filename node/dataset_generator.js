@@ -13,10 +13,12 @@ const samples = [];
 let id = 1;
 fileNames.forEach((fn) => {
     
+    console.log(fn)
     const content = fs.readFileSync(constants.RAW_DIR + "/" + fn);
+    console.log(content)
     const {session, student, drawings} = JSON.parse(content);
 
-    for(let labels in drawings) {
+    for(let label in drawings) {
         samples.push({
             id,
             label,
