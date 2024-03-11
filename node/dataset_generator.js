@@ -13,9 +13,9 @@ const samples = [];
 let id = 1;
 fileNames.forEach((fn) => {
     
-    console.log(fn)
+    // console.log(fn)
     const content = fs.readFileSync(constants.RAW_DIR + "/" + fn);
-    console.log(content)
+    // console.log(content)
     const {session, student, drawings} = JSON.parse(content);
 
     for(let label in drawings) {
@@ -25,6 +25,9 @@ fileNames.forEach((fn) => {
             student_name: student,
             student_id: session
         });
+
+        const paths = drawings[label]
+        fs.writeFileSync(constants.JSON_DIR + "/" + id + ".json", JSON.stringify(paths))
         id++;
     }
 });
