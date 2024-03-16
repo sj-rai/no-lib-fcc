@@ -1,4 +1,6 @@
 /data/raw/*
 /data/dataset/img/*
-/data/datast/json/*
+/data/dataset/json/*
 /node/node_modules
+
+.DS_Store
